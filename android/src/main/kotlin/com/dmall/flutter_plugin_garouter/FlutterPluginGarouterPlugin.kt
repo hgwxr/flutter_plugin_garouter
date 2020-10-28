@@ -61,9 +61,9 @@ class FlutterPluginGarouterPlugin : FlutterPlugin, MethodCallHandler {
 //                        activity?.startActivity(
 //                                FlutterFragmentActivity.withNewEngine().initialRoute(pageRoute)
 //                                        .build(activity))
-                        FlutterEngineCacheWrapper.getAvailableEngine().navigationChannel.pushRoute(pageRoute)
+//                        FlutterEngineCacheWrapper.getAvailableEngine().navigationChannel.pushRoute(pageRoute)
 
-//                        GANavigator.getInstance()?.forward("app://GAFlutterPage?pageRoute=$pageRoute", pageParams)
+                        GANavigator.getInstance()?.forward("app://GAFlutterPage?pageRoute=$pageRoute", pageParams)
                         result.success(true)
                     } catch (e: Exception) {
                         result.error("0001", e.message, e.localizedMessage)
