@@ -1,0 +1,60 @@
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/google/'
+            name 'Google'
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/jcenter/'
+        }
+        maven {
+            url uri('./repo')
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/jitpack/'
+        }
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/jcenter/'
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/google/'
+            name 'Google'
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/jitpack/'
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/sell-dev/'
+        }
+        maven {
+            url 'http://nexus.dmall.com:8081/nexus/content/repositories/central/'
+        }
+        google()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
