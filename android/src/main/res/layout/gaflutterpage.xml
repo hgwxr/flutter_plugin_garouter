@@ -5,9 +5,9 @@
     android:orientation="vertical">
 
 
-    <io.flutter.embedding.android.FlutterView
-        android:id="@+id/flutterViewContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <io.flutter.embedding.android.FlutterView-->
+<!--        android:id="@+id/flutterViewContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 </FrameLayout>

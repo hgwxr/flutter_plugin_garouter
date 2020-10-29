@@ -10,7 +10,9 @@ import 'package:flutter_plugin_garouter_example/pages/PlamVersion.dart';
 import 'package:flutter_plugin_garouter_example/pages/image/ImagePage.dart';
 
 void main() {
-  runApp(MyApp());
+  runZonedGuarded(() {
+    runApp(MyApp());
+  }, (e, s) => print("================>" + e + "  s:" + s.toString()));
 }
 
 class MyApp extends StatelessWidget {
@@ -153,7 +155,7 @@ class _MyAppState extends State<MainPage> {
                 leading: new Icon(Icons.photo_album),
                 title: new Text('打开测试' + ImagePage.TAG),
                 onTap: () async => {
-                      // Navigator.pushNamed(context, ImagePage.TAG)
+                      Navigator.pushNamed(context, ImagePage.TAG),
                       await FlutterPluginGarouter.forward(ImagePage.TAG)
                     }),
             new ListTile(

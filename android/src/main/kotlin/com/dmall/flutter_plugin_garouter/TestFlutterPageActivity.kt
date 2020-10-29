@@ -33,7 +33,7 @@ class TestFlutterPageActivity : FragmentActivity() {
         setContentView(R.layout.app_main_layout)
 
         val gaNavigator = findViewById<GANavigator>(R.id.gaNavigator)
-        gaNavigator?.forward("app://GAFlutterPage")
+        gaNavigator?.forward("app://GAFlutterPage?pageRoute=/")
     }
 
 
@@ -52,9 +52,10 @@ class TestFlutterPageActivity : FragmentActivity() {
 //    }
 //
     override fun onBackPressed() {
+
         GANavigator.getInstance().let {
             if (it.getTopPage(1) != null) {
-                FlutterEngineCacheWrapper.getAvailableEngine().navigationChannel.popRoute()
+                FlutterEngineCacheWrapper.getAvailableEngine("main").navigationChannel.popRoute()
                 it.backward()
             } else {
                 super.onBackPressed()

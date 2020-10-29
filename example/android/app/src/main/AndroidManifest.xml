@@ -30,13 +30,13 @@
             <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
                 android:resource="@drawable/launch_background" />
-
-        </activity>
-        <activity  android:theme="@style/LaunchTheme" android:name="com.dmall.flutter_plugin_garouter.TestFlutterPageActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity  android:theme="@style/LaunchTheme" android:name="com.dmall.flutter_plugin_garouter.TestFlutterPageActivity" >
+
         </activity>
         <activity  android:theme="@style/LaunchTheme" android:name="io.flutter.embedding.android.FlutterFragmentActivity" >
             <meta-data
